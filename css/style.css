@@ -609,21 +609,25 @@ body::after {
 @-webkit-keyframes horizontalExpand {
   0% {
     -webkit-transform: scaleX(0);
-    transform: scaleX(0)
+    transform: scaleX(0);
+    background-color: #b4b4b4
   }
   100% {
     -webkit-transform: scaleX(1);
-    transform: scaleX(1)
+    transform: scaleX(1);
+    background-color: #f3f3f3
   }
 }
 @keyframes horizontalExpand {
   0% {
     -webkit-transform: scaleX(0);
-    transform: scaleX(0)
+    transform: scaleX(0);
+    background-color: #b4b4b4
   }
   100% {
     -webkit-transform: scaleX(1);
-    transform: scaleX(1)
+    transform: scaleX(1);
+    background-color: #f3f3f3
   }
 }
 @-webkit-keyframes verticalExpand {
@@ -775,7 +779,7 @@ body::after {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-bottom: 2.1875rem;
+  padding-bottom: 1.875rem;
   position: relative
 }
 .footer__content::after {
@@ -786,7 +790,7 @@ body::after {
   left: 0;
   width: 100%;
   height: .0625rem;
-  background-color: rgba(255,255,255,.2);
+  opacity: .2;
   -webkit-transform: scaleX(0);
   transform: scaleX(0)
 }
@@ -906,7 +910,8 @@ body::after {
   display: grid;
   background-color: #f6f6f6;
   -webkit-transform: scale(1.1);
-  transform: scale(1.1)
+  transform: scale(1.1);
+  box-shadow: 0 0 4.6875rem .0625rem #2e2e2e
 }
 .hero__content {
   align-self: center;
@@ -992,11 +997,12 @@ body::after {
   transform: scale(0)
 }
 html.loaded .hero._watcher-view .hero__body {
-  transition: -webkit-transform .6s;
-  transition: transform .6s;
-  transition: transform .6s,-webkit-transform .6s;
+  transition: box-shadow .8s,-webkit-transform .6s;
+  transition: transform .6s,box-shadow .8s;
+  transition: transform .6s,box-shadow .8s,-webkit-transform .6s;
   -webkit-transform: scale(1);
-  transform: scale(1)
+  transform: scale(1);
+  box-shadow: none
 }
 html.loaded .hero._watcher-view .hero__caption {
   -webkit-animation: fadeInTranslateY .3s forwards;
@@ -1131,7 +1137,6 @@ html.loaded .header {
   display: block;
   width: 100%;
   height: .0625rem;
-  background-color: #f3f3f3;
   margin-top: .75rem;
   -webkit-transform: scaleX(0);
   transform: scaleX(0)
@@ -1977,6 +1982,9 @@ html.loaded .product-category._watcher-view .product-category__image {
   }
   .footer__container {
     row-gap: 2.1875rem
+  }
+  .footer__content {
+    padding-bottom: 2.1875rem
   }
   .footer__logo img {
     width: 12rem
